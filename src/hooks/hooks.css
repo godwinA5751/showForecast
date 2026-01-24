@@ -1,0 +1,172 @@
+.visibility, .precip, .humidity-card, .uv-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uv-card {
+  gap: 5px;
+}
+
+
+.feels-like,
+.average-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.average-weather {
+  gap: 11px;
+}
+
+.temp {
+  font-size: 2rem;
+  font-weight: 550;
+  opacity: 0.8;
+}
+
+.average-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.ave-desc {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.rows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rows span:first-child {
+  opacity: 0.9;
+  font-weight: 500;
+  color: #c0dcfc;
+}
+
+.rows span:last-child {
+  opacity: 1;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.wind {
+  width: 82.5%;
+}
+
+.layer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 10px;
+}
+
+.uv-bar {
+  height: 6px;
+  background: linear-gradient(to right,
+      #38f858,
+      #f9d423,
+      #f97316,
+      #ff3d3d,
+      #d900ff);
+  border-radius: 4px;
+}
+
+.bar-range {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.uv-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #fffefe;
+  border: 3px solid #3e78aff1;
+  border-radius: 50%;
+  transition: left 0.4s ease;
+}
+
+.sun-curve {
+  width: 100%;
+}
+
+
+.hooks-header {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  opacity: 0.85;
+  font-weight: 600;
+  color: #add7ff;
+}
+
+.gauge {
+  position: relative;
+  width: 100%;
+  height: 170px;
+  margin-top: -15px;
+}
+
+.gauge svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tick {
+  stroke: rgba(255, 255, 255, 0.35);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.indicator {
+  stroke: white;
+  stroke-width: 5;
+  stroke-linecap: round;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.pressure-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pressure-value .sign{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.pressure-value .value {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.pressure-value .unit {
+  display: block;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.pressure-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  opacity: 0.9;
+}

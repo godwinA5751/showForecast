@@ -1,8 +1,7 @@
-// SearchCity.js
-import axios from "axios";
 import dayjs from 'dayjs';
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Search from '../assets/images/search.svg'
@@ -12,6 +11,8 @@ import Cloud from '../assets/images/cloudy.jfif'
 import Default from '../assets/images/default.jfif'
 import PartlyCloud from '../assets/images/partly-clouded.jfif'
 import Night from '../assets/images/clear-night.jpg'
+import ClearDay from '../assets/images/clear-day.webp'
+import PartLyClodyNight from '../assets/images/partly-cloudy-night.jpg'
 import "./search.css";
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
@@ -54,6 +55,8 @@ export function SearchCity({ city, setCity, searchCity, setSearchCity, weather, 
 
   function getWeatherBackground(icon) {
     switch (icon) {
+      case 'clear-day':
+        return `${ClearDay}`
       case 'clear-night':
         return `${Night}`
       case 'rain':
@@ -62,8 +65,10 @@ export function SearchCity({ city, setCity, searchCity, setSearchCity, weather, 
         return `${Sun}`
       case 'cloudy':
         return `${Cloud}`
-      case 'partly cloudy':
+      case 'partly-cloudy-day':
         return `${PartlyCloud}`
+      case 'partly-cloudy-night':
+        return `${PartLyClodyNight}`
       default:
         return `${Default}`
     }

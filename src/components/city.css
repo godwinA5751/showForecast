@@ -1,33 +1,268 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", system-ui, sans-serif;
   color: white;
 }
 
-.city-weather-box{
+.city-weather-box {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.header{
+.header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 50px 20px 20px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0.7;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
 }
 
-.btn{
+.load-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: rgb(0, 86, 147);
+  font-size: 20px;
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  backdrop-filter: blur(3px);
+}
+
+.load {
+  margin-left: 5px;
+}
+
+.load span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: skyblue;
+  margin: 0 2px;
+  display: inline-block;
+  animation: load 1.5s infinite;
+}
+
+.load span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.load span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.load span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes load {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  overflow-y: auto;
+  flex: 1;
+  /* Hide scrollbar while keeping scroll functionality */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sections::-webkit-scrollbar {
+  display: none;
+}
+
+.first-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: 10px;
+}
+
+.second-section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.layer-child {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  background: linear-gradient(180deg, #3a7ec184, #2f6faa4c);
+  backdrop-filter: blur(10px);
+  padding: 10px 10px 10px 15px;
+  border-radius: 10px;
+}
+
+/* .second-section{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr)
+} */
+
+.condition {
+  width: 40%;
+}
+
+.spacer {
+  width: 40%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.spacer-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.spacer-child-child {
+  width: 40%;
+  height: 100%;
+  min-height: 200px;
+  background: linear-gradient(180deg, #3a7ec184, #2f6faa4c);
+  backdrop-filter: blur(10px);
+  padding: 10px 10px 10px 15px;
+  border-radius: 10px;
+}
+
+.btn {
   width: 30px;
   height: 30px;
   border: none;
   background: transparent;
   padding: 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgb(20, 37, 89);
   cursor: pointer;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  background: rgba(50, 103, 173, 0.318);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .sections {
+    padding: 20px;
+  }
+
+  .first-section {
+    padding: 0;
+    width: 100%;
+  }
+
+  .second-section{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .first-layer,
+  .second-layer,
+  .spacer {
+    width: 60%;
+  }
+
+  .spacer-child-child {
+    width: 60%;
+  }
+
+  .wind {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .load-box {
+    width: 80%;
+  }
+
+  .sections,
+  .spacer,
+  .condition,
+  .first-layer,
+  .second-layer {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .first-section {
+    flex-direction: column;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .second-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 0;
+    width: 100%;
+  }
+
+
+  .spacer-child-child {
+    width: 50%;
+  }
+
+  .wind {
+    width: 100%;
+  }
 }

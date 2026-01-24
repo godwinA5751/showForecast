@@ -1,0 +1,123 @@
+.forecast-card {
+  background: linear-gradient(180deg, #2b35575f, #1c23405f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 120px auto 80px;
+  border-radius: 20px;
+  padding: 15px 15px 0 15px;
+  width: 100%;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 10px rgb(20, 37, 89);
+  flex: 1;
+  max-height: 400px;
+  overflow: hidden;
+
+}
+
+.forecast-box {
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
+  /* Hide scrollbar while keeping scroll functionality */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.forecast-box::-webkit-scrollbar {
+  display: none;
+}
+
+.forecast-title {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.forecast-row {
+  display: grid;
+  grid-template-columns: 60px 40px 40px 1fr 40px;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  width: 100%;
+}
+
+.forecast-row:first-child {
+  border-top: 2px solid rgba(255, 255, 255, 0.13);
+}
+
+.forecast-row:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 26px;
+  color: #ffd54f;
+}
+
+.temps {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+.temp.min {
+  opacity: 0.6;
+}
+
+.bar {
+  position: relative;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.range {
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+  animation: growBar 0.8s ease-out forwards;
+}
+
+.temp-dot {
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border: 2px solid #1c2340c4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.4s ease;
+  z-index: 2;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .forecast-card {
+    max-height: 600px;
+  }
+}

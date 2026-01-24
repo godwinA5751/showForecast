@@ -1,0 +1,141 @@
+.condition-card {
+  max-width: 900px;
+  margin: auto;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  color: #f8fafc;
+  border-radius: 16px;
+}
+
+.back-btn {
+  background: rgba(128, 128, 128, 0.615);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 2px 0;
+  border: none;
+  font-size: 1rem;
+  color: #a6cdfc;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.condition-date {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.condition-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.condition-icon svg {
+  font-size: 4rem;
+}
+
+.condition-temps {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.temp-max {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.temp-min {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.condition-desc {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.condition-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.condition-details div {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sunrise-gradient {
+  background: linear-gradient(135deg, #FFF3B0, #FFD166, #FFB703);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sunset-gradient {
+  background: linear-gradient(135deg, #F77F00, #E76F51, #9D0208);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Hourly Forecast ---------- */
+
+.hourly {
+  margin-top: 2rem;
+}
+
+.hourly-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.hourly-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hour-card {
+  min-width: 80px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem;
+  border-radius: 12px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hour-card svg {
+  font-size: 1.8rem;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .condition-main {
+    flex-direction: column;
+  }
+
+  .temp-max {
+    font-size: 2rem;
+  }
+
+  .hour-card {
+    min-width: 70px;
+  }
+}

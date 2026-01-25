@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { WiBarometer } from "react-icons/wi";
 import "react-loading-skeleton/dist/skeleton.css";
 // import "./hooks.css";
 
@@ -8,7 +7,7 @@ export default function PressureCardSkeleton() {
     <div className="layer-child pressure-card">
       {/* Header */}
       <div className="hooks-header">
-        <WiBarometer size={22} />
+        <Skeleton width={50} height={18} />
         <Skeleton width={90} height={14} />
       </div>
 

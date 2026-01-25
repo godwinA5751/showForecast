@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { WiStrongWind } from "react-icons/wi";
 import "react-loading-skeleton/dist/skeleton.css";
 // import "./WindCard.css";
 
@@ -9,7 +8,7 @@ export default function WindCardSkeleton() {
       {/* LEFT INFO */}
       <div className="wind-info">
         <p className="hooks-header title">
-          <WiStrongWind size={30} />
+          <Skeleton width={50} height={18} />
           <Skeleton width={50} height={14} style={{ marginLeft: 6 }} />
         </p>
 

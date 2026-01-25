@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { WiSunrise } from "react-icons/wi";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function SunRiseSkeleton() {
@@ -7,7 +6,7 @@ export default function SunRiseSkeleton() {
     <div className="layer-child">
       {/* Header */}
       <p className="hooks-header">
-        <WiSunrise size={30} />
+        <Skeleton width={50} height={18} />
         <Skeleton width={90} height={14} />
       </p>
 

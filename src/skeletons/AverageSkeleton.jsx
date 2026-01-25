@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { MdShowChart } from "react-icons/md";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function AverageCardSkeleton() {
@@ -7,7 +6,7 @@ export default function AverageCardSkeleton() {
     <div className="average-weather spacer-child-child">
       {/* Header */}
       <p className="hooks-header">
-        <MdShowChart size={30} />
+        <Skeleton width={50} height={18} />
         <Skeleton width={90} height={16} />
       </p>
 

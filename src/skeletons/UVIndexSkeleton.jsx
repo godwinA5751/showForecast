@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { WiDaySunny } from "react-icons/wi";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function UVIndexSkeleton() {
@@ -7,7 +6,7 @@ export default function UVIndexSkeleton() {
     <div className="layer-child uv-card">
       {/* Header */}
       <p className="hooks-header">
-        <WiDaySunny size={30} />
+        <Skeleton width={50} height={18} />
         <Skeleton width={70} height={14} />
       </p>
 

@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import { WiThermometer } from "react-icons/wi";
 import "react-loading-skeleton/dist/skeleton.css";
 
 export default function FeelsLikeSkeleton() {
@@ -7,7 +6,7 @@ export default function FeelsLikeSkeleton() {
     <div className="feels-like spacer-child-child">
       {/* Header */}
       <p className="hooks-header">
-        <WiThermometer size={30} />
+        <Skeleton width={50} height={18} />
         <Skeleton width={90} height={16} />
       </p>
 

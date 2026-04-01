@@ -21,15 +21,18 @@ dayjs.extend(timezone);
 
 export function SearchCity({ city, setCity, searchCity, setSearchCity, weather, setWeather }) {
   const navigate = useNavigate();
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     axios
       .get(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${encodeURIComponent(searchCity)}?unitGroup=metric&contentType=json&key=${API_KEY}`)
       .then((res) => {
-        console.log("WEATHER DATA:", res.data);
         setWeather(res.data);
       })
-      .catch((err) => console.error(err.response?.data));
+      .catch((err) => {
+        setMessage('City not found', err);
+        setTimeout(() => setMessage(''), 3000);
+      });
   }, [searchCity, setWeather]);
 
   const [currentTime, setCurrentTime] = useState(dayjs());
@@ -82,6 +85,7 @@ export function SearchCity({ city, setCity, searchCity, setSearchCity, weather, 
           <img src={Search} alt="search" />
         </button>
       </form>
+      {message && <p className="error">{message}</p>}
       {weather && (
         <div className="city"
           style={{

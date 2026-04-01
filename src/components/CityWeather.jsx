@@ -58,13 +58,20 @@ export function CityWeather({ weather }) {
       backgroundImage: `url(${displayWeather && getWeatherBackground(displayWeather.currentConditions.icon)})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
     }} className='city-weather-box'>
       {!displayWeather && (
         <GeneralSkeleton />
       )}
       {displayWeather && (
         <>
-          <div className='header'>
+          <div className='header'
+            style={{
+              backgroundImage: 'inherit',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundAttachment: 'fixed',
+            }}>
             <h2>{(displayWeather.resolvedAddress).charAt(0).toUpperCase() + (displayWeather.resolvedAddress).slice(1)}</h2>
             <h2>{Math.round(displayWeather.currentConditions.temp)}°</h2>
             <h3>{displayWeather.currentConditions.icon}</h3>

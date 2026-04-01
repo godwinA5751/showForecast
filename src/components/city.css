@@ -23,8 +23,8 @@ body {
   width: 100%;
   flex-direction: column;
   padding: 40px 20px 20px 20px;
-  position: sticky;
-  z-index: 100;
+  position: fixed;
+  z-index: 10;
   letter-spacing: 1px;
   font-size: 1.5rem;
 }
@@ -35,7 +35,8 @@ body {
   justify-content: space-between;
   flex-direction: column;
   gap: 20px;
-  padding: 0 40px;
+  margin-top: 5%;
+  padding: 10px 40px;
   overflow-y: auto;
   flex: 1;
   /* Hide scrollbar while keeping scroll functionality */
@@ -167,7 +168,7 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .header{ padding: 10px 0 0 0; }
+  .header{ padding: 10px; }
   .load-box {
     width: 80%;
   }
